@@ -1,0 +1,11 @@
+release/adapter.o
+release/chat_form.o
+release/clickablelabel.o
+release/main.o
+release/mainwindow.o
+release/profile_form.o
+release/user.o
+release/moc_chat_form.o
+release/moc_clickablelabel.o
+release/moc_mainwindow.o
+release/moc_profile_form.o
