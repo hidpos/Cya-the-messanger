@@ -25,6 +25,7 @@ void Server::incomingConnection(qintptr socketDescriptor)
 
     Sockets.push_back(socket);
     qDebug() << "$ new client connected with socket " << socketDescriptor;
+    socket_names.push_back("CLIENT");
 }
 
 void Server::slotReadyRead()
@@ -72,6 +73,7 @@ void Server::slotReadyRead()
                 {
                     socket = Sockets[i];
                     SendToClient(message);
+                    qDebug() << "$ message sent!";
                 }
             }
         }
@@ -82,7 +84,10 @@ void Server::slotReadyRead()
                 deleted_name += str[i];
             int index = 0;
             for (int i = 0; i < socket_names.length(); i++)
-                if (deleted_name == socket_names[i]) index = i;
+            {
+                if (deleted_name == socket_names[i])
+                    index = i;
+            }
             qDebug() << "$ chat entry ended from " << deleted_name;
             socket_names.erase(socket_names.begin() + index);
             Sockets.erase(Sockets.begin() + index);
@@ -92,11 +97,13 @@ void Server::slotReadyRead()
             bool name_added = false;
             for (int i = 0; i < socket_names.size(); i++)
             {
-                if (socket_names[i] == str) name_added = true;
+                if (socket_names[i] == str)
+                    name_added = true;
             }
             if (!name_added)
             {
                 qDebug() << "$ new chat entry from " << str;
+                socket_names.pop_back();
                 socket_names.push_back(str);
             }
         }

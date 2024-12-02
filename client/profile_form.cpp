@@ -57,7 +57,7 @@ void profile_form::SetUser(User& _user, QTcpSocket *sock)
 void profile_form::friendClicked(QLabel *label)
 {
     chat_form *form = new chat_form();
-    form->set_comp(label->text(), user.name, chat_socket);
+    form->set_comp(label->text(), user.login, chat_socket);
     form->show();
 }
 profile_form::~profile_form()

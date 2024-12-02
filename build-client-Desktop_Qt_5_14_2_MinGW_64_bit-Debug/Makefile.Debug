@@ -239,6 +239,17 @@ debug/moc_chat_form.cpp: ../client/chat_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../client/adapter.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		../client/user.h \
 		debug/moc_predefs.h \
 		../../../QT/5.14.2/mingw73_64/bin/moc.exe
 	D:\QT\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/PROJECTS/CYA_the_messanger/build-client-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/PROJECTS/CYA_the_messanger/client -ID:/QT/5.14.2/mingw73_64/include -ID:/QT/5.14.2/mingw73_64/include/QtWidgets -ID:/QT/5.14.2/mingw73_64/include/QtGui -ID:/QT/5.14.2/mingw73_64/include/QtANGLE -ID:/QT/5.14.2/mingw73_64/include/QtNetwork -ID:/QT/5.14.2/mingw73_64/include/QtCore -I. -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\client\chat_form.h -o debug\moc_chat_form.cpp
@@ -465,6 +476,12 @@ debug/moc_mainwindow.cpp: ../client/mainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		../client/user.h \
+		../client/adapter.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		debug/moc_predefs.h \
 		../../../QT/5.14.2/mingw73_64/bin/moc.exe
 	D:\QT\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/PROJECTS/CYA_the_messanger/build-client-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/PROJECTS/CYA_the_messanger/client -ID:/QT/5.14.2/mingw73_64/include -ID:/QT/5.14.2/mingw73_64/include/QtWidgets -ID:/QT/5.14.2/mingw73_64/include/QtGui -ID:/QT/5.14.2/mingw73_64/include/QtANGLE -ID:/QT/5.14.2/mingw73_64/include/QtNetwork -ID:/QT/5.14.2/mingw73_64/include/QtCore -I. -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\client\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -598,6 +615,11 @@ debug/moc_profile_form.cpp: ../client/profile_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		debug/moc_predefs.h \
 		../../../QT/5.14.2/mingw73_64/bin/moc.exe
 	D:\QT\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include D:/PROJECTS/CYA_the_messanger/build-client-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/QT/5.14.2/mingw73_64/mkspecs/win32-g++ -ID:/PROJECTS/CYA_the_messanger/client -ID:/QT/5.14.2/mingw73_64/include -ID:/QT/5.14.2/mingw73_64/include/QtWidgets -ID:/QT/5.14.2/mingw73_64/include/QtGui -ID:/QT/5.14.2/mingw73_64/include/QtANGLE -ID:/QT/5.14.2/mingw73_64/include/QtNetwork -ID:/QT/5.14.2/mingw73_64/include/QtCore -I. -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\client\profile_form.h -o debug\moc_profile_form.cpp
@@ -746,7 +768,9 @@ debug/adapter.o: ../client/adapter.cpp ../client/adapter.h \
 		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
 		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
 		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
-		../client/user.h
+		../client/user.h \
+		../../../QT/5.14.2/mingw73_64/include/QtCore/QTime \
+		../../../QT/5.14.2/mingw73_64/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\adapter.o ..\client\adapter.cpp
 
 debug/chat_form.o: ../client/chat_form.cpp ../client/chat_form.h \
@@ -854,6 +878,17 @@ debug/chat_form.o: ../client/chat_form.cpp ../client/chat_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/qfiledevice.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qvector2d.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qtouchdevice.h \
+		../client/adapter.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QMainWindow \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		../client/user.h \
 		ui_chat_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/QVariant \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QApplication \
@@ -863,7 +898,30 @@ debug/chat_form.o: ../client/chat_form.cpp ../client/chat_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qguiapplication.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qinputmethod.h \
-		../../../QT/5.14.2/mingw73_64/include/QtCore/QDebug
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QFrame \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qframe.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QLineEdit \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qtextcursor.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qtextformat.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qpen.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qtextoption.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QPushButton \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../QT/5.14.2/mingw73_64/include/QtGui/qtextdocument.h \
+		../../../QT/5.14.2/mingw73_64/include/QtCore/QDebug \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../../../QT/5.14.2/mingw73_64/include/QtCore/QTime \
+		../../../QT/5.14.2/mingw73_64/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\chat_form.o ..\client\chat_form.cpp
 
 debug/clickablelabel.o: ../client/clickablelabel.cpp ../client/clickablelabel.h \
@@ -1086,6 +1144,12 @@ debug/main.o: ../client/main.cpp ../client/mainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		../client/user.h \
+		../client/adapter.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QApplication \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qapplication.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -1204,6 +1268,12 @@ debug/mainwindow.o: ../client/mainwindow.cpp ../client/mainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		../client/user.h \
+		../client/adapter.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		ui_mainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/QVariant \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QApplication \
@@ -1233,12 +1303,6 @@ debug/mainwindow.o: ../client/mainwindow.cpp ../client/mainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QStatusBar \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qstatusbar.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QWidget \
-		../client/adapter.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
@@ -1377,6 +1441,11 @@ debug/profile_form.o: ../client/profile_form.cpp ../client/profile_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmainwindow.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/qicon.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/QPixmap \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/QDebug \
 		../../../QT/5.14.2/mingw73_64/include/QtGui/QtGui \
@@ -1605,15 +1674,11 @@ debug/profile_form.o: ../client/profile_form.cpp ../client/profile_form.h \
 		../client/clickablelabel.h \
 		../../../QT/5.14.2/mingw73_64/include/QtCore/Qt \
 		../client/adapter.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/QTcpSocket \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtcpsocket.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qtnetwork-config.h \
-		../../../QT/5.14.2/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../client/chat_form.h \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
 		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
-		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qdialog.h
+		../../../QT/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../client/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\profile_form.o ..\client\profile_form.cpp
 
 debug/user.o: ../client/user.cpp ../client/user.h \

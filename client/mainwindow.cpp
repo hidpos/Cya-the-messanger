@@ -32,7 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    disconnect(con_adapt.socket, &QTcpSocket::readyRead, this, &MainWindow::slotReadyRead);
     delete ui;
 }
 
