@@ -22,6 +22,8 @@ public:
 
 private:
     Ui::profile_form *ui;
+    User user;
+    QTcpSocket *chat_socket;
 };
 
 #endif // PROFILE_FORM_H

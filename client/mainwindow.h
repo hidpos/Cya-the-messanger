@@ -14,11 +14,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    adapter con_adapt;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
+    adapter con_adapt;
     Ui::MainWindow *ui;
     void DecodeUserInfo(QString str, QString& name, QString& surname,
                         QString& photo, QString& password, QString &login,

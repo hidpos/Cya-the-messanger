@@ -15,11 +15,11 @@ class chat_form : public QWidget
 public:
     explicit chat_form(QWidget *parent = nullptr);
     ~chat_form();
-    void set_comp(QString companion, QString prof_name, QTcpSocket* socket);
+    void set_comp(QString companion, QString prof_name);
 private:
-    adapter conadapt;
     QString chat_companion;
     QString profile_name;
+    adapter conadapt;
     Ui::chat_form *ui;
 public slots:
     void slotReadyRead();
@@ -28,6 +28,8 @@ private slots:
     void on_pushButton_clicked();
     void on_chat_form_destroyed();
     void closeEvent(QCloseEvent *event);
+    void on_lineEdit_textChanged(const QString &arg1);
+    void on_lineEdit_editingFinished();
 };
 
 #endif // CHAT_FORM_H

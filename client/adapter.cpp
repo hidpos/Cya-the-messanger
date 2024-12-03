@@ -1,10 +1,6 @@
 #include "adapter.h"
-#include <QTime>
 
-adapter::adapter()
-{
-
-}
+adapter::adapter() {}
 
 void adapter::SendToServer(QString str)
 {
@@ -23,8 +19,7 @@ void adapter::slotReadyRead()
     {
         QString str;
         in >> str;
-
     } else {
-        //ui->textBrowser->append("read error");
+        qDebug() << "$ QDataStream read error";
     }
 }

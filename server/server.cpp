@@ -7,13 +7,8 @@
 
 Server::Server()
 {
-    if (this->listen(QHostAddress::Any, 2323))
-    {
-        qDebug() << "$ server started";
-    } else {
-        qDebug() << "$ server started with error";
-    }
-    nextBlockSize = 0;
+    if (this->listen(QHostAddress::Any, 2323)) qDebug() << "$ server started";
+    else qDebug() << "$ server started with error";
 }
 
 void Server::incomingConnection(qintptr socketDescriptor)
@@ -22,7 +17,6 @@ void Server::incomingConnection(qintptr socketDescriptor)
     socket->setSocketDescriptor(socketDescriptor);
     connect(socket, &QTcpSocket::readyRead, this, &Server::slotReadyRead);
     connect(socket, &QTcpSocket::disconnected, socket, &QTcpSocket::deleteLater);
-
     Sockets.push_back(socket);
     qDebug() << "$ new client connected with socket " << socketDescriptor;
     socket_names.push_back("CLIENT");
@@ -46,14 +40,13 @@ void Server::slotReadyRead()
         else if(str[0] == '<')
         {
             qDebug() << "$ login attempt: " << str;
-            QString login, pasword, name, surname, photo;
-            DecodeUserInfo(str, login, pasword);
+            QString login, pasword, name, surname, photo;  QString empty1, empty2, empty3;
+            Decode(str, login, pasword, empty1, empty2, empty3);
             if (FindUser(login, pasword, name, surname, photo))
             {
-                QString logins = GetAllUsers();
                 qDebug() << "$ user found, sending userdata to client";
                 SendToClient(">" + name + "^" + surname + "^" + photo
-                             + "^" + pasword + "^" + login + logins);
+                             + "^" + login + "^" + pasword + GetAllUsers());
             }
             else
             {
@@ -63,8 +56,8 @@ void Server::slotReadyRead()
         }
         else if(str[0] == "|")
         {
-            QString sender_name, comp_name, message;
-            DecodeChatMessage(str, sender_name, comp_name, message);
+            QString sender_name, comp_name, message;    QString empty1, empty2;
+            Decode(str, sender_name, comp_name, message, empty1, empty2);
             qDebug() << "$ got message from " << sender_name << " to "
                      << comp_name << ": " << message;
             for (int i = 0; i < socket_names.size(); i++)
@@ -91,6 +84,32 @@ void Server::slotReadyRead()
             qDebug() << "$ chat entry ended from " << deleted_name;
             socket_names.erase(socket_names.begin() + index);
             Sockets.erase(Sockets.begin() + index);
+        }
+        else if(str[0] == "@")
+        {
+            QString sender_name, comp_name, message;    QString empty1, empty2;
+            Decode(str, sender_name, comp_name, message, empty1, empty2);
+            for (int i = 0; i < socket_names.size(); i++)
+            {
+                if (comp_name == socket_names[i])
+                {
+                    socket = Sockets[i];
+                    SendToClient("@");
+                }
+            }
+        }
+        else if (str[0] == "#")
+        {
+            QString sender_name, comp_name, message;    QString empty1, empty2;
+            Decode(str, sender_name, comp_name, message, empty1, empty2);
+            for (int i = 0; i < socket_names.size(); i++)
+            {
+                if (comp_name == socket_names[i])
+                {
+                    socket = Sockets[i];
+                    SendToClient("#");
+                }
+            }
         }
         else
         {
@@ -127,8 +146,7 @@ void Server::RegisterNewUser(QString str)
     fout << str.toStdString() << "\n";
 }
 
-void Server::DecodeUserInfo(QString str, QString& name, QString& surname,
-                            QString& photo, QString& password, QString &login)
+void Server::Decode(QString str, QString& name, QString& surname, QString& photo, QString& password, QString &login)
 {
     int word = 0;
     for(int i = 1; i < str.size(); i++)
@@ -159,32 +177,7 @@ void Server::DecodeUserInfo(QString str, QString& name, QString& surname,
     }
 }
 
-void Server::DecodeUserInfo(QString str, QString& login, QString &password)
-{
-    int word = 0;
-    for(int i = 1; i < str.size(); i++)
-    {
-        if (str[i] == '^')
-        {
-            i++;
-            word++;
-        }
-        switch (word)
-        {
-        case 0:
-            login += str[i];
-            break;
-        case 1:
-            password += str[i];
-            break;
-        }
-    }
-}
-
-
-
-bool Server::FindUser(QString login, QString password, QString& name,
-              QString& surname, QString& photo)
+bool Server::FindUser(QString login, QString password, QString& name, QString& surname, QString& photo)
 {
     std::ifstream counter(USERDATAPATH);
     QFile fin(USERDATAPATH);
@@ -207,7 +200,7 @@ bool Server::FindUser(QString login, QString password, QString& name,
         QString _login, _password;
         users[i] = stream.readLine();
         name = "";  surname = ""; photo = "";
-        DecodeUserInfo(users[i], name, surname, photo, _password, _login);
+        Decode(users[i], name, surname, photo, _login, _password);
         if (_login == login && _password == password)
         {
             i = count;
@@ -225,10 +218,9 @@ QString Server::GetAllUsers()
     QTextStream stream(&fin);
     if (!fin.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "$ cannot open userdata database: " << fin.errorString();
-        // exception
     }
     qDebug() << "$ userdata database opened successfully";
-    int count = -1; char *str = new char [1024];
+    int count = 0; char *str = new char [1024];
     while (!counter.eof())
     {
         counter.getline(str, 1024, '\n');
@@ -240,34 +232,9 @@ QString Server::GetAllUsers()
     {
         QString login, password, name, surname, photo;
         users[i] = stream.readLine();
-        DecodeUserInfo(users[i], name, surname, photo, password, login);
-        logins += "^" + login;
+        Decode(users[i], name, surname, photo, login, password);
+        qDebug() << name << "; " << surname << "; " << photo << "; " << login << "; " << password;
+        logins += "^" + name;
     }
     return logins;
-}
-
-void Server::DecodeChatMessage(QString str, QString &sender_name, QString &comp_name,
-                               QString& message)
-{
-    int word = 0;
-    for(int i = 1; i < str.size(); i++)
-    {
-        if (str[i] == '^')
-        {
-            i++;
-            word++;
-        }
-        switch (word)
-        {
-        case 0:
-            sender_name += str[i];
-            break;
-        case 1:
-            comp_name += str[i];
-            break;
-        case 2:
-            message += str[i];
-            break;
-        }
-    }
 }

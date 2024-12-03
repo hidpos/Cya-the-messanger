@@ -16,16 +16,9 @@ private:
     QVector<QString> socket_names;
     QByteArray Data;
     void SendToClient(QString str);
-    quint16 nextBlockSize;
     void RegisterNewUser(QString str);
-    void DecodeUserInfo(QString str, QString& name, QString& surname,
-                        QString& photo, QString& password, QString &login);
-    void DecodeUserInfo(QString str, QString& login, QString &password);
-    void DecodeChatMessage(QString str, QString& sender_socket, QString& comp_socket,
-                           QString& message);
-    bool FindUser(QString login, QString password, QString& name,
-                  QString& surname, QString& photo);
-
+    void Decode(QString str, QString& name, QString& surname, QString& photo, QString& password, QString &login);
+    bool FindUser(QString login, QString password, QString& name, QString& surname, QString& photo);
     QString GetAllUsers();
 
 public slots:

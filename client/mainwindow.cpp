@@ -1,24 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "adapter.h"
 #include <QPixmap>
 #include <QMessageBox>
 #include "user.h"
 #include "profile_form.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     con_adapt.socket = new QTcpSocket(this);
     connect(con_adapt.socket, &QTcpSocket::readyRead, this, &MainWindow::slotReadyRead);
-    connect(con_adapt.socket, &QTcpSocket::disconnected,
-            con_adapt.socket, &QTcpSocket::deleteLater);
-    QPixmap pix("D:/PROJECTS/CYA_the_messanger/cya_icon.png");
+    connect(con_adapt.socket, &QTcpSocket::disconnected, con_adapt.socket, &QTcpSocket::deleteLater);
+    QPixmap pix("cya_icon.png");
     ui->image->setPixmap(pix.scaled(250,250,Qt::KeepAspectRatio));
     con_adapt.socket->connectToHost("127.0.0.1", 2323);
-    // set visibility
     {
         ui->reg_button->setVisible(false);
         ui->photo_text->setVisible(false);
@@ -33,6 +27,17 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void ShowMessageBox(QString title, QMessageBox::Icon icon, QString text)
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle(title);
+    msgBox.setIcon(icon);
+    msgBox.setText(text);
+    msgBox.setStandardButtons(QMessageBox::Ok);
+    msgBox.show();
+    msgBox.exec();
 }
 
 void MainWindow::slotReadyRead()
@@ -58,7 +63,7 @@ void MainWindow::slotReadyRead()
             profile_form *form = new profile_form();
             QString password, login, photo, name, surname;
             QVector<QString> logins;
-            DecodeUserInfo(str, name, surname, photo, password, login, logins);
+            DecodeUserInfo(str, name, surname, photo, login, password, logins);
             User user(name, surname, photo, password, login, logins);
             form->show(); form->SetUser(user, con_adapt.socket);
             this->hide();
@@ -69,7 +74,6 @@ void MainWindow::slotReadyRead()
 }
 
 void MainWindow::on_regop_button_clicked() {
-    // set visibility
     {
         ui->reg_button->setVisible(true);
         ui->login_button->setVisible(false);
@@ -94,17 +98,8 @@ void MainWindow::on_reg_button_clicked()
                 name(ui->name_text->text()),
                 surname(ui->surname_text->text()),
                 photo(ui->photo_text->text());
-        con_adapt.SendToServer(">" + name + "^" + surname + "^" + photo
-                               + "^" + password + "^" + login);
-
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("Успешно!");
-        msgBox.setIcon(QMessageBox::Icon::Information);
-        msgBox.setText("Вы были зарегистированы!");
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.show();
-        msgBox.exec();
-        // visibility & cleaning
+        con_adapt.SendToServer(">" + name + "^" + surname + "^" + photo + "^" + password + "^" + login);
+        ShowMessageBox("Успешно!", QMessageBox::Icon::Information, "Вы были зарегистрированы!");
         {
             ui->reg_button->setVisible(false);
             ui->login_button->setVisible(true);
@@ -121,16 +116,10 @@ void MainWindow::on_reg_button_clicked()
         }
     }
     else
-    {
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("Внимание!");
-        msgBox.setIcon(QMessageBox::Icon::Information);
-        msgBox.setText("Заполните все поля!");
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.show();
-        msgBox.exec();
-    }
+        ShowMessageBox("Внимание!", QMessageBox::Icon::Information, "Заполните все поля!");
 }
+
+
 
 void MainWindow::on_login_button_clicked()
 {
@@ -141,9 +130,7 @@ void MainWindow::on_login_button_clicked()
     }
 }
 
-void MainWindow::DecodeUserInfo(QString str, QString& name, QString& surname,
-                            QString& photo, QString& password, QString &login,
-                                QVector<QString>& logins)
+void MainWindow::DecodeUserInfo(QString str, QString& name, QString& surname, QString& photo, QString& password, QString &login, QVector<QString>& logins)
 {
     int word = 0;
     QString _login;

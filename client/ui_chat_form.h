@@ -29,6 +29,8 @@ public:
     QLineEdit *lineEdit;
     QPushButton *pushButton;
     QTextBrowser *textBrowser;
+    QLabel *typing_lab;
+    QLabel *photo_2;
 
     void setupUi(QWidget *chat_form)
     {
@@ -62,6 +64,15 @@ public:
         QFont font1;
         font1.setPointSize(14);
         textBrowser->setFont(font1);
+        typing_lab = new QLabel(chat_form);
+        typing_lab->setObjectName(QString::fromUtf8("typing_lab"));
+        typing_lab->setGeometry(QRect(20, 540, 301, 16));
+        QFont font2;
+        font2.setPointSize(8);
+        typing_lab->setFont(font2);
+        photo_2 = new QLabel(chat_form);
+        photo_2->setObjectName(QString::fromUtf8("photo_2"));
+        photo_2->setGeometry(QRect(30, 10, 31, 31));
 
         retranslateUi(chat_form);
 
@@ -74,6 +85,8 @@ public:
         photo->setText(QString());
         comp_title->setText(QCoreApplication::translate("chat_form", "TextLabel", nullptr));
         pushButton->setText(QCoreApplication::translate("chat_form", ">", nullptr));
+        typing_lab->setText(QCoreApplication::translate("chat_form", "\320\277\320\265\321\207\320\260\321\202\320\260\320\265\321\202...", nullptr));
+        photo_2->setText(QString());
     } // retranslateUi
 
 };
