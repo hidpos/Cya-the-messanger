@@ -1,12 +1,12 @@
 ## CYA - the messanger
 
 <p align="center">
-https://github.com/user-attachments/assets/a0188823-81e4-4cf5-a49b-625d873b9414
+[https://github.com/user-attachments/assets/a0188823-81e4-4cf5-a49b-625d873b9414]
 </p>
 
 ## About
 
-CYA is a client-server application that is a messenger with an unlimited number of users at the same time.
+CYA is a client-server application that is a messenger with an unlimited number of users at the same time.<br>
 The project consists of two applications - server (console application, where a report on all actions that occur with the server is kept) and client application (interaction with the interface, creation of new users, login and so on).
 
 ## Demonstration video:
