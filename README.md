@@ -1,5 +1,9 @@
 ## CYA - the messanger
 
+<h1>
+![cya_icon](https://github.com/user-attachments/assets/a0188823-81e4-4cf5-a49b-625d873b9414)
+</h1>
+
 ## About
 
 CYA is a client-server application that is a messenger with an unlimited number of users at the same time.
