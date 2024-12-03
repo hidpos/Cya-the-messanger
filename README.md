@@ -1,7 +1,7 @@
 ## CYA - the messanger
 
 <p align="center">
-      <img src="[https://user-images.githubusercontent.com/61382847/222977935-6379daa0-2b6d-48aa-a9f7-c72b21b60950.png](https://github.com/user-attachments/assets/a0188823-81e4-4cf5-a49b-625d873b9414)"/>
+      ![alt text](https://user-images.githubusercontent.com/61382847/222977935-6379daa0-2b6d-48aa-a9f7-c72b21b60950.png)
 </p>
 
 ## About
