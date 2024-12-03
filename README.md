@@ -1,7 +1,7 @@
 ## CYA - the messanger
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/ade62638-1252-414d-baff-33a629f48dfd.png">
+<img src="https://github.com/user-attachments/assets/ade62638-1252-414d-baff-33a629f48dfd">
 </p>
 
 ## About
